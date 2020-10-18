@@ -1,1 +1,1 @@
-export const PUBLIC_URL = '/mytask/'; 
+export const PUBLIC_URL = '/mytask/';
