@@ -1,3 +1,18 @@
+.f-size-15{
+  font-size: 15px;
+}
 .bodyscroll::-webkit-scrollbar {
     display: none;
   }
+  .styleScrollBar::-webkit-scrollbar {
+    width: 6px;
+    overflow-y: scroll !important;
+    background-color: re;
+  } 
+  .styleScrollBar::-webkit-scrollbar-thumb{
+    background-color: rgb(85, 83, 83);
+    border-radius: 5px;
+  } 
+  .styleScrollBar::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(53, 51, 51);
+  } 

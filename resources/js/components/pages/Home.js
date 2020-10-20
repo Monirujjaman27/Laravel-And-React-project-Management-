@@ -43,8 +43,8 @@ render() {
             <Card.Header><h4 className="d-inline-flex">{item.name} </h4></Card.Header>
             <Card.Body>
               <Card.Text>{item.description}</Card.Text>
-              <Link className=" text-white btn btn-info mr-2" to={`${PUBLIC_URL}editProject/`}><i class="fas fa-edit"></i></Link>
-              <Link className=" text-white btn btn-danger mr-2" to={`${PUBLIC_URL}editProject/`}><i class="fas fa-trash"></i></Link>
+              <Link className=" text-white btn btn-info mr-2" to={`${PUBLIC_URL}editProject/`}><i className="fas fa-edit"></i></Link>
+              <Link className=" text-white btn btn-danger mr-2" to={`${PUBLIC_URL}editProject/`}><i className="fas fa-trash"></i></Link>
           </Card.Body>
         </Card>
         ))}

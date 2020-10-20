@@ -8,7 +8,7 @@ class Home extends Component {
 
   state = {
     projects: [],
-    isloading:false,
+    isloading: false,
 
   };
 
@@ -17,12 +17,12 @@ class Home extends Component {
   }
 
   getData = () => {
-    this.setState({isloading:true});
+    this.setState({ isloading: true });
     Axios.get(`${PUBLIC_URL}api/project`).then((res) => {
       const projects = res.data.data;
       this.setState({
         projects,
-        isloading:false
+        isloading: false
       });
     });
   }
@@ -30,20 +30,24 @@ class Home extends Component {
   render() {
     return (
       <>
-        {/* loading spinner  */}
-        { this.state.isloading && <h1 className="text-center"><Spinner animation="border" variant="info" /></h1>}
-        {/* loading spinner  end */}
-        <div className="mt-2">
+
+        <div className="">
           <Badge variant="info"><h2>Projects <sup>{this.state.projects.length}</sup></h2></Badge>
           <Badge variant="info float-right text-dark p-2"><Link className="text-dark" to={`${PUBLIC_URL}projectCreate`}>+Create New Projects</Link></Badge>
         </div>
 
+
+        {/* loading spinner  */}
+        { this.state.isloading && <h1 className="text-center"><Spinner animation="border" variant="info" /></h1>}
+        {/* loading spinner  end */}
+
+
         {this.state.projects.map((item, index) => (
           <Card key={index} className="mb-4 mt-2">
             <Card.Header><h4 className="d-inline-flex">{item.name}
-            {item.tasks_count > 0 && (
-              <sup className="text-primary">{item.tasks_count}</sup>
-            )}
+              {item.tasks_count > 0 && (
+                <sup className="text-primary">{item.tasks_count}</sup>
+              )}
             </h4></Card.Header>
             <Card.Body>
               <Card.Text>{item.description}</Card.Text>

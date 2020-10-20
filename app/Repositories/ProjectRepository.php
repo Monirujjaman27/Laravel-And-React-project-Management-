@@ -2,6 +2,7 @@
 namespace App\Repositories;
 use App\Model\Project;
 use App\Interfaces\Crudinterface;
+use Illuminate\Support\str;
 use Illuminate\Http\Request;
 
 class ProjectRepository implements Crudinterface{
@@ -27,6 +28,7 @@ class ProjectRepository implements Crudinterface{
     {
         $project = new Project;
         $project->name = ucfirst($request->name);
+        $project->slug = str::slug($request->name, '-');
         $project->description = ucfirst($request->description);
         $project->user_id = $request->user_id;
         $project->save();
@@ -39,6 +41,7 @@ class ProjectRepository implements Crudinterface{
     {
         $project = $this->fineById($id);
         $project->name = ucfirst($request->name);
+        $project->slug = str::slug($request->name, '-');
         $project->description = ucfirst($request->description);
         $project->user_id = $request->user_id;
         $project->save();

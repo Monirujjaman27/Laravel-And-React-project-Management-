@@ -3,6 +3,7 @@ namespace App\Repositories;
 use App\Model\Task;
 use App\Interfaces\Crudinterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\str;
 
 class TaskRepository implements Crudinterface{
  
@@ -27,6 +28,7 @@ class TaskRepository implements Crudinterface{
     {
         $data = new Task;
         $data->name = ucfirst($request->name);
+        $data->slug = str::slug($request->name, '-');
         $data->description = ucfirst($request->description);
         $data->project_id = $request->project_id;
         $data->save();
@@ -39,6 +41,7 @@ class TaskRepository implements Crudinterface{
     {
         $data = $this->fineById($id);
         $data->name = ucfirst($request->name);
+        $data->slug = str::slug($request->name, '-');
         $data->description = ucfirst($request->description);
         $data->project_id = $request->project_id;
         $data->save();

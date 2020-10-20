@@ -22,12 +22,12 @@ export default function App() {
         <Header />
         {/* container  */}
         <Container fluid>
-          <Row>
-            <Col sm={12} md={2} style={{ height: '700px', overflowY: 'scroll', padding: '0px' }} className="pl-3 pt-2">
+          <Row className="mt-3">
+            <Col sm={12} md={2} style={{ height: '700px', overflowY: 'scroll', padding: '0px' }} className="styleScrollBar pl-2">
               <Sidebar />
             </Col>
-            <Col sm={12} md={10} style={{ height: '700px', overflowY: 'scroll', padding: '0px' }} className="">
-              <div className="pl-2" style={{height:'700px'}}>
+            <Col sm={12} md={10} style={{ height: '700px', overflowY: 'scroll', padding: '0px' }} className="styleScrollBar">
+              <div className="h-100">
                 <Switch>
                   <Route path={`${PUBLIC_URL}about`} exact={true} component={About} />
                   <Route path={`${PUBLIC_URL}contact`} exact={true} component={Contact} />

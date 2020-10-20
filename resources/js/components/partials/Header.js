@@ -12,7 +12,7 @@ const Header = () => {
             <>
             <Navbar bg="dark" variant="dark">
               <Navbar.Brand href="">
-              <Nav.Item className=""><Link className="mr-2 text-white text-decoration-none hover" to={`${PUBLIC_URL}`}>Task Management</Link></Nav.Item>
+              <Nav.Item className=""><Link className="mr-2 text-white text-decoration-none hover" to={`${PUBLIC_URL}`}>Project Management</Link></Nav.Item>
               </Navbar.Brand>
               <Nav className="mr-auto">
                 <Nav.Item><Link className="mr-2 text-white text-decoration-none hover" to={`${PUBLIC_URL}`}>Home</Link></Nav.Item>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { PUBLIC_URL } from '../../servises/Constant';
 import TaskCreate from '../tasks/TaskCreate';
 
-class ProjectView extends Component {
+class ProjectEdite extends Component {
 
   state = {
     projects: {},
@@ -88,4 +88,4 @@ class ProjectView extends Component {
   }
 }
 
-export default ProjectView;
+export default ProjectEdite;
