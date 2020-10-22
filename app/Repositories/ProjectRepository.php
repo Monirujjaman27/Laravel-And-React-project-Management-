@@ -44,6 +44,7 @@ class ProjectRepository implements Crudinterface{
         $project->slug = str::slug($request->name, '-');
         $project->description = ucfirst($request->description);
         $project->user_id = $request->user_id;
+        $project->status = $request->status;
         $project->save();
         return $project;
 

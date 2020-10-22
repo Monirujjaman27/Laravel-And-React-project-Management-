@@ -6,3 +6,8 @@ export const ProjectStore = async(data) => {
         return res.data;
       });
 };
+export const ProjectUpdate = async(id, data) => {
+    return await Axios.put(`${PUBLIC_URL}api/project/${id}`, data).then((res) => {
+        return res.data;
+      });
+};

@@ -13,6 +13,8 @@ import Footer from './partials/Footer';
 import Projects from './project/Projects';
 import ProjectCreate from './project/ProjectCreate';
 import ProjectView from './project/ProjectView';
+import ProjectEdit from './project/ProjectEdit';
+import TaskEdit from './tasks/TaskEdit';
 export default function App() {
   return (
 
@@ -34,6 +36,8 @@ export default function App() {
                   <Route path={`${PUBLIC_URL}projects`} exact={true} component={Projects} />
                   <Route path={`${PUBLIC_URL}projectCreate`} exact={true} component={ProjectCreate} />
                   <Route path={`${PUBLIC_URL}projectView/:id`} exact={true} component={ProjectView} />
+                  <Route path={`${PUBLIC_URL}projectEdit/:id`} exact={true} component={ProjectEdit} />
+                  <Route path={`${PUBLIC_URL}task-edit/:id`} exact={true} component={TaskEdit} />
                   <Route path={`${PUBLIC_URL}`} exact={true} component={Home} />
                 </Switch>
               </div>
