@@ -52,7 +52,7 @@ class projectCreate extends Component {
     render() {
         return (
             <>
-            <Card className="mt-5">
+            <Card>
                 <Card.Header>Create Poject 
                     <Badge className="float-right" variant="primary p-2"><Link className=" text-dark" to={`${PUBLIC_URL}projects`}>All projects </Link></Badge>
                     </Card.Header>

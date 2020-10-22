@@ -9,7 +9,6 @@ import Header from './partials/Header';
 import About from './pages/About';
 import { Col, Container, Row } from 'react-bootstrap';
 import Sidebar from './partials/Sidebar';
-import Footer from './partials/Footer';
 import Projects from './project/Projects';
 import ProjectCreate from './project/ProjectCreate';
 import ProjectView from './project/ProjectView';
@@ -42,7 +41,7 @@ export default function App() {
                 </Switch>
               </div>
               {/* Footer component  */}
-              <Footer />
+              {/* <Footer /> */}
             </Col>
           </Row>
           {/* A <Switch> looks through its children <Route>s and

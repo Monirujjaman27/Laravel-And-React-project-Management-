@@ -43,12 +43,7 @@ class ProjectView extends Component {
     });
   };
 
-  toggleEditTask = () => {
-    this.setState({
-      toggleEditTask: !this.state.toggleEditTask,
-      toggleAddTask: false,
-    });
-  }
+
   // afterCreated task 
   afterCreated = (data) => {
     this.toggleAddTask();
@@ -124,7 +119,6 @@ class ProjectView extends Component {
             <Card.Body >
               <Card.Text>{item.description}</Card.Text>
               <Link className="btn btn-primary btn-sm mx-1" to={`${PUBLIC_URL}task-edit/${item.id}`}> <i className="fas fa-edit"></i></Link>
-
              <span onClick={() => this.delTask(item.id)} className="btn btn-danger btn-sm"><i className="fas fa-trash"></i></span>
             </Card.Body>
             {/* Task Edit Component */}

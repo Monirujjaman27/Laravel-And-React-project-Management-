@@ -62,7 +62,7 @@ class Sidebar extends Component {
 
         {/* all projects Items */}
         {this.state.projects.map((item, index) => (
-          <div className="ml-2 f-size-15" key={index} ><Link className="text-dark" to={`${PUBLIC_URL}projectView/${item.id}`}>{item.name}</Link>
+          <div className="ml-2 py-2 f-size-15" key={index} ><Link className="text-dark" to={`${PUBLIC_URL}projectView/${item.id}`}>{item.name}</Link>
             {/* task count by project   */}
             {item.tasks_count > 0 && (
               <sup className="text-primary border rounded">{item.tasks_count}</sup>

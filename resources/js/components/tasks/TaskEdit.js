@@ -76,7 +76,7 @@ class TaskEdit extends Component {
       <>
         <Card className="">
           <Card.Header>Edit Poject
-                    <Badge className="float-right" variant="primary p-2"><Link className=" text-dark" to={`${PUBLIC_URL}projectView/${this.state.project_id}`}>Back To project </Link></Badge>
+                    <Badge className="float-right" variant="primary p-2"><Link className=" text-dark" to={`${PUBLIC_URL}projectView/${this.state.project_id}`}>Cancel</Link></Badge>
           </Card.Header>
           <Card.Body>
             <Form onSubmit={this.submiuteForm}>
@@ -95,11 +95,11 @@ class TaskEdit extends Component {
 
               {/* Description  */}
               <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Project Description <sup className="text-danger"><strong>*</strong></sup>  </Form.Label>
+                <Form.Label>Task Description <sup className="text-danger"><strong>*</strong></sup>  </Form.Label>
                 {this.state.errors && this.state.errors.description && (
                   <p className="text-danger">{this.state.errors.description[0]}</p>
                 )}
-                <Form.Control name="st" as="textarea" placeholder="Description" rows={5}
+                <Form.Control name="description" as="textarea" placeholder="Description" rows={5}
                   value={this.state.description}
                   onChange={(e) => this.changeInput(e)}
                 />

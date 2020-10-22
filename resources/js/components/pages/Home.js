@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Badge, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { PUBLIC_URL } from '../../servises/Constant';
+import { DelTask } from '../../servises/TaskServie';
 
 class Home extends Component {
 
@@ -26,6 +27,18 @@ class Home extends Component {
     });
   }
 
+  // Task delete action 
+  delTask = async (id)=>{
+    const response = await DelTask(id);
+    if (response.success) {
+      this.getData();
+     } else {
+       this.setState({
+         errors: response.errors,
+         isLoading: false,
+       });
+     }
+  }
 render() { 
   return (  
     <>
@@ -43,8 +56,8 @@ render() {
             <Card.Header><h4 className="d-inline-flex">{item.name} </h4></Card.Header>
             <Card.Body>
               <Card.Text>{item.description}</Card.Text>
-              <Link className=" text-white btn btn-info mr-2" to={`${PUBLIC_URL}editProject/`}><i className="fas fa-edit"></i></Link>
-              <Link className=" text-white btn btn-danger mr-2" to={`${PUBLIC_URL}editProject/`}><i className="fas fa-trash"></i></Link>
+              <Link className="btn btn-primary btn-sm mx-1" to={`${PUBLIC_URL}task-edit/${item.id}`}> <i className="fas fa-edit"></i></Link>
+              <span onClick={() => this.delTask(item.id)} className="btn btn-danger btn-sm"><i className="fas fa-trash"></i></span>
           </Card.Body>
         </Card>
         ))}

@@ -11,3 +11,10 @@ export const ProjectUpdate = async(id, data) => {
         return res.data;
       });
 };
+
+
+export const DelProject = async(id) => {
+    return await Axios.delete(`${PUBLIC_URL}api/project/${id}`).then((res) => {
+        return res.data;
+      });
+};

@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { Badge, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { PUBLIC_URL } from '../../servises/Constant';
+import { DelProject } from '../../servises/ProjectService';
+
+
 
 class Home extends Component {
 
@@ -27,6 +30,17 @@ class Home extends Component {
     });
   }
 
+  delAction = async (id)=>{
+    const response = await DelProject(id);
+    if (response.success) {
+      this.getData();
+     } else {
+       this.setState({
+         errors: response.errors,
+         isLoading: false,
+       });
+     }
+  }
   render() {
     return (
       <>
@@ -51,9 +65,9 @@ class Home extends Component {
             </h4></Card.Header>
             <Card.Body>
               <Card.Text>{item.description}</Card.Text>
-              <Link className=" text-white btn btn-success mr-2" to={`${PUBLIC_URL}projectView/${item.id}`}>View</Link>
-              <Link className=" text-white btn btn-info mr-2" to={`${PUBLIC_URL}editProject/`}>Edit</Link>
-              <Link className=" text-white btn btn-danger mr-2" to={`${PUBLIC_URL}editProject/`}>Edit</Link>
+              <Link className=" text-white btn btn-success btn-sm mr-2" to={`${PUBLIC_URL}projectView/${item.id}`}> <i className="fas fa-eye"></i></Link>
+              <Link className="btn btn-primary btn-sm btn-sm mx-1" to={`${PUBLIC_URL}projectEdit/${item.id}`}><i className="fas fa-edit"></i></Link>
+              <span onClick={() => this.delAction(item.id)} className="btn btn-danger btn-sm"><i className="fas fa-trash"></i></span>
             </Card.Body>
           </Card>
         ))}
