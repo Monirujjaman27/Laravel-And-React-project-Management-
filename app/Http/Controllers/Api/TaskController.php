@@ -14,7 +14,7 @@ class TaskController extends Controller
 
     public $dataRepository;
     public function __construct(TaskRepository $dataRepository)
-    {
+    {   
         $this->dataRepository = $dataRepository;
     }
     
@@ -25,7 +25,6 @@ class TaskController extends Controller
      */
     public function index()
     {
-        
         $data = $this->dataRepository->getAll();
         return response()->json([
             'success' => true,

@@ -44,7 +44,7 @@ class TaskRepository implements Crudinterface{
         $data->slug = str::slug($request->name, '-');
         $data->description = ucfirst($request->description);
         $data->project_id = $request->project_id;
-        $data->status= $request->status;
+        $data->status = $request->status;
         $data->save();
         return $data;
 

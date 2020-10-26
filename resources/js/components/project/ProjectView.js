@@ -55,6 +55,7 @@ class ProjectView extends Component {
   };
 
   delTask = async (id)=>{
+    
     const response = await DelTask(id);
     if (response.success) {
       this.getData();
